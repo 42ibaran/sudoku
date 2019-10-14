@@ -6,7 +6,7 @@
 #    By: ibaran <ibaran@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/10 13:28:55 by ibaran            #+#    #+#              #
-#    Updated: 2019/10/14 12:57:04 by ibaran           ###   ########.fr        #
+#    Updated: 2019/10/14 13:15:20 by ibaran           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ clean:
 
 fclean: clean
 	@$(MAKE) -C $(LIB_PATH) $@
-	@rm -f $(ASM) $(VM)
+	@rm -f $(NAME)
 	@echo "$(RED)[Sudoku exe Removed]$(DEFAULT)"
 
 re: fclean all
