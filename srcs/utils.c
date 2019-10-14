@@ -6,7 +6,7 @@
 /*   By: ibaran <ibaran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:48:05 by ibaran            #+#    #+#             */
-/*   Updated: 2019/10/14 13:01:37 by ibaran           ###   ########.fr       */
+/*   Updated: 2019/10/14 17:45:28 by ibaran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ void		print_grid(t_cell **grid)
 				ft_printf("{dark_green}%d{eoc}", grid[i][j].value);
 			if (j < 8)
 				ft_printf(" ");
+			if (!((j + 1) % 3) && j < 8)
+				ft_printf("| ");
 			j++;
 		}
-		ft_printf("\n");
+		ft_printf("%s", (!((i + 1) % 3) && i < 8) ? HORIZONTAL : "\n");
 		i++;
 	}
 }
@@ -91,6 +93,9 @@ void		error(int flag, int line_nbr)
 		ft_printf("Error: invalid value on line %d\n", line_nbr);
 	if (flag == ERR_INVALID_GRID)
 		ft_printf("Error: mistake in input on line %d\n", line_nbr);
+	if (flag == ERR_MAX_SOLUTION)
+		ft_printf("Error: too many solutions, maximum = %d. Stopping now\n",
+			MAX_SOLUTIONS);
 	if (flag == ERR_NO_SOLUTION)
 		ft_printf("Error: can't find solution\n");
 	f_free();

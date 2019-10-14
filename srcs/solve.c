@@ -6,7 +6,7 @@
 /*   By: ibaran <ibaran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 17:06:34 by ibaran            #+#    #+#             */
-/*   Updated: 2019/10/14 12:58:13 by ibaran           ###   ########.fr       */
+/*   Updated: 2019/10/14 17:42:55 by ibaran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int		solve(t_cell **grid, int i, int j)
 		if (g_solutions > 1)
 			ft_printf("\nAnother solution:\n");
 		print_grid(grid);
+		if (g_solutions > MAX_SOLUTIONS)
+			error(ERR_MAX_SOLUTION, 0);
 		return (-1);
 	}
 	if (j == 9)

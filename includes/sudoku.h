@@ -6,7 +6,7 @@
 /*   By: ibaran <ibaran@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:43:55 by ibaran            #+#    #+#             */
-/*   Updated: 2019/10/14 12:58:13 by ibaran           ###   ########.fr       */
+/*   Updated: 2019/10/14 17:46:10 by ibaran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 # include <stdbool.h>
 # include "libft.h"
+
+# define HORIZONTAL "\n- - - + - - - + - - -\n"
+# define MAX_SOLUTIONS 42
 
 enum				e_errors
 {
@@ -28,6 +31,7 @@ enum				e_errors
 	ERR_TOO_FEW_VALUES,
 	ERR_INVALID_NUMBER,
 	ERR_INVALID_GRID,
+	ERR_MAX_SOLUTION,
 	ERR_NO_SOLUTION
 };
 
